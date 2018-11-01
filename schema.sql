@@ -1,6 +1,6 @@
-create table 1uizzes(
+create table quizzes(
     id serial primary key,
-    name varchar(300)
+    name varchar (300)
 );
 
 create table questions(
@@ -15,11 +15,11 @@ create table students(
     name varchar(300)
 );
 
-create answers(
-    id serial primary key
+create table answers(
+    id serial primary key,
     answer_text text,
-    question_id integer references (id),
-    student_id  integer references(id)
+    question_id integer references questions (id),
+    student_id  integer references students(id)
 );
 
 
